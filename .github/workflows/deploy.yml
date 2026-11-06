@@ -15,4 +15,4 @@ jobs:
           aws-access-key-id: AKIAVAKDQBWIGCGYILEQ
           aws-secret-access-key: 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
           aws-region: us-east-1
-      - run: aws s3 sync site/ s3://arn:aws:s3:::estebanbucket6nov-344275815824-us-east-1-an --delete
+      - run: aws s3 sync site/ s3://estebanbucket6nov-344275815824-us-east-1-an --delete
