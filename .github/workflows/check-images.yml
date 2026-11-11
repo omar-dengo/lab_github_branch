@@ -1,7 +1,6 @@
 name: Check images
 on:
   pull_request:
-    paths: ['./**']
 
 jobs:
   check_name01:
@@ -11,12 +10,11 @@ jobs:
       - name: Check filenames are lowercase letters only
         run: |
           bad=0
-          for f in ./*; do
-            [ -e "$f" ] || continue
+          while IFS= read -r f; do
             name=$(basename "$f")
             if [[ ! "$name" =~ ^[a-z]+\.(jpg|png)$ ]]; then
-              echo "::error::Bad filename: $name (lowercase letters only, no caps, no numbers, no spaces, then .png)"
+              echo "::error::Bad filename: $name (lowercase letters only, no caps, no numbers, no spaces, then .jpg or .png)"
               bad=1
             fi
-          done
+          done < <(find . -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -not -path './.git/*')
           exit $bad
