@@ -4,7 +4,7 @@ on:
     paths: ['./**']
 
 jobs:
-  check:
+  check_name01:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
