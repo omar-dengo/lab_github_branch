@@ -2,17 +2,17 @@
 ## if you use CAPS, numbers, spaces or something else it would be rejected
 
 ### user-01 picture:
-![user-01-pic](usernameone.png)
+![user-01-pic](erick.png)
 ### user-02 picture:
-![user-02-pic](usernametwo.png)
+![user-02-pic](liss.png)
 ### user-03 picture:
-![user-03-pic](userthree.png)
+![user-03-pic](armando.png)
 ### user-04 picture:
-![user-04-pic](userfour.png)
+![user-04-pic](andrea.png)
 ### user-05 picture:
-![user-05-pic](userfive.png)
+![user-05-pic](daniel.png)
 ### user-06 picture:
-![user-06-pic](usersix.png)
+![user-06-pic](angie.png)
 ### user-07 picture:
 ![user-07-pic](userseven.png)
 ### user-08 picture:
