@@ -4,7 +4,7 @@
 ### user-01 picture:
 ![user-01-pic](usernameone.png)
 ### user-02 picture:
-![user-02-pic](usertwo.png)
+![user-02-pic](usernametwo.png)
 ### user-03 picture:
 ![user-03-pic](userthree.png)
 ### user-04 picture:
