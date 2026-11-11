@@ -1,18 +1,22 @@
-name: Deploy
+name: Check images
 on:
-  push:
-    branches: [main]
-
-concurrency: deploy
+  pull_request:
+    paths: ['./**']
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: AKIAVAKDQBWIGCGYILEQ
-          aws-secret-access-key: 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
-          aws-region: us-east-1
-      - run: aws s3 sync . s3://estebanbucket6nov-344275815824-us-east-1-an --delete --exclude ".git/*" --exclude ".github/*" --exclude "README.md"
+      - name: Check filenames are lowercase letters only
+        run: |
+          bad=0
+          for f in ./*; do
+            [ -e "$f" ] || continue
+            name=$(basename "$f")
+            if [[ ! "$name" =~ ^[a-z]+\.(jpg|png)$ ]]; then
+              echo "::error::Bad filename: $name (lowercase letters only, no caps, no numbers, no spaces, then .png)"
+              bad=1
+            fi
+          done
+          exit $bad
